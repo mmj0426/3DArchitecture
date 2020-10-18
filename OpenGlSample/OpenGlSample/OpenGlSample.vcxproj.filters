@@ -792,6 +792,15 @@
     <ClInclude Include="RenderableObject.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="IRenderer.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="IUpdater.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SampleNonRender.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="glm\detail\func_common.inl">
@@ -1224,6 +1233,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="UserObject.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="SampleNonRender.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
