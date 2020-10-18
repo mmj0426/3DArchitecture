@@ -6,7 +6,7 @@
 #include "Renderer.h"
 #include "Sphere.h"
 #include "UserObject.h"
-#include "NonRenderableObject.h"
+#include "SampleNonRender.h"
 
 
 int main()
@@ -32,7 +32,7 @@ int main()
 	renderer->AddObject(sphere);
 
 	//NonRenderableObject
-	NonRenderableObject* non_render_obj = new NonRenderableObject();
+	SampleNonRender* non_render_obj = new SampleNonRender();
 
 	
 	renderer->SetViewMatrix(glm::lookAt(
@@ -44,7 +44,6 @@ int main()
 	while (true)
 	{
 		renderer->Update(non_render_obj);
-
 		renderer->draw();
 	}
 
