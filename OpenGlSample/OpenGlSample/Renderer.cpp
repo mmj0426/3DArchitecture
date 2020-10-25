@@ -80,7 +80,8 @@ void Renderer::draw()
 		// Use our shader
 		glUseProgram((*i)->programID);
 
-		glm::mat4 MVP = ProjectionMatrix * ViewMatrix * (*i)->GetTranslate() * ModelMatrix;
+
+		glm::mat4 MVP = ProjectionMatrix * ViewMatrix * (*i)->GetTranslate() * ModelMatrix * (*i)->GetScale()  * (*i)->GetRotate();
 
 		// Send our transformation to the currently bound shader, 
 		// in the "MVP" uniform

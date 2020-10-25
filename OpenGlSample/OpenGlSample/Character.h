@@ -20,6 +20,9 @@ public :
 	void Movement();
 
 private : 
+	float currentPosX;
+	float currentPosZ;
+
 	float speed;
 
 };

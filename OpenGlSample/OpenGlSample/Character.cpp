@@ -14,8 +14,7 @@ Character::Character(
 	this->texturefile_path = texturefile_path;
 
 	InitData();
-
-	speed = currentTranslate.x;
+	speed = 0.05f;
 }
 
 void Character::InitData()
@@ -37,16 +36,27 @@ void Character::ShutDown()
 
 void Character::Update()
 {
+	currentPosX = currentTranslate.x;
+	currentPosZ = currentTranslate.z;
+
 	if (InputManager::GetInstance()->GetKey(GLFW_KEY_A) == GLFW_PRESS)
 	{
-		speed -= 0.01;
+		currentPosX -= speed;
 	}
 	if (InputManager::GetInstance()->GetKey(GLFW_KEY_D) == GLFW_PRESS)
 	{
-		speed += 0.01;
+		currentPosX += speed;
+	}
+	if (InputManager::GetInstance()->GetKey(GLFW_KEY_W) == GLFW_PRESS)
+	{
+		currentPosZ -= speed;
+	}
+	if (InputManager::GetInstance()->GetKey(GLFW_KEY_S) == GLFW_PRESS)
+	{
+		currentPosZ += speed;
 	}
 
-	SetPosition(glm::vec3(speed, 0.0f, 0.0f));
+	SetPosition(glm::vec3(currentPosX, 0.0f, currentPosZ));
 }
 
 void Character::Movement()

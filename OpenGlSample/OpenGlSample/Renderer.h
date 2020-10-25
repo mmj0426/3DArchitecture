@@ -28,9 +28,9 @@ public:
 
 	virtual void ShutDown() override;
 
+	glm::mat4 ModelMatrix;
 private : 
 
-	glm::mat4 ModelMatrix;
 	glm::mat4 ViewMatrix;
 	glm::mat4 ProjectionMatrix;
 
