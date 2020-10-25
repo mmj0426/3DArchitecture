@@ -2,10 +2,8 @@
 #include "FileManager.h"
 #include "IRenderer.h"
 
-Sphere::Sphere(FileManager* filemgr)
+Sphere::Sphere()
 {
-	fileManager = filemgr;
-
 	InitData();
 }
 
@@ -13,9 +11,9 @@ void Sphere::InitData()
 {
 	RenderableObject::InitData();
 
-	fileManager->LoadOBJ("sphere.obj", vertices, uvs, normals);
+	FileManager::GetInstance()->LoadOBJ("sphere.obj", vertices, uvs, normals);
 
-	texture = fileManager->LoadDDS("moon.dds");
+	texture = FileManager::GetInstance()->LoadDDS("moon.dds");
 
 	SetBuffer();
 }

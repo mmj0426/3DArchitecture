@@ -6,7 +6,7 @@
 class Sphere : public RenderableObject
 {
 public : 
-	Sphere(FileManager* fileManager);
+	Sphere();
 	~Sphere() {}
 	
 	virtual void InitData() override;

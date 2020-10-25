@@ -8,6 +8,7 @@ Object::Object()
 void Object::SetPosition(glm::vec3 src_position)
 {
 	translate = glm::translate(glm::mat4(1.0f), src_position);
+	currentTranslate = src_position;
 }
 
 void Object::ShutDown()

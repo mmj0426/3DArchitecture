@@ -1,13 +1,20 @@
-#pragma once
+#ifndef __FILEMANAGER_H__
+#define __FILEMANAGER_H__
+
 
 #include <vector>
 
 #include "include/GL/glew.h"
 #include "glm/glm.hpp"
+#include "Singleton.h"
 
-class FileManager
+class FileManager : public Singleton<FileManager>
 {
-public : 
+private : 
+	GLuint VertexShaderID;
+	GLuint FragmentShaderID;
+
+public :
 	std::vector<GLfloat>ReadCsvData(const char* _filePath);
 	GLuint LoadShaders(const char* vertex_file_path, const char* fragment_file_path);
 	void LoadOBJ(
@@ -16,9 +23,7 @@ public :
 		std::vector<glm::vec2>& out_uvs,
 		std::vector<glm::vec3>& out_normals);
 	GLuint LoadDDS(const char* imagepath);
-
-private : 
-	GLuint VertexShaderID;
-	GLuint FragmentShaderID;	
 };
 
+
+#endif // !__FILEMANAGER_H__

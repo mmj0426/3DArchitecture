@@ -4,7 +4,7 @@
 
 #include <iostream>
 
-Renderer::Renderer()
+void Renderer::Initialize()
 {
 	ModelMatrix = glm::mat4(1.0);
 
@@ -15,10 +15,7 @@ Renderer::Renderer()
 	);
 
 	ProjectionMatrix = glm::perspective(glm::radians(45.0f), 4.0f / 3.0f, 0.1f, 100.0f);
-}
 
-void Renderer::Initialize()
-{
 	// Initialise GLFW
 	if (!glfwInit())
 	{

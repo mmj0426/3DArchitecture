@@ -6,8 +6,8 @@
 class UserObject : public RenderableObject
 {
 public : 
+	UserObject() {}
 	UserObject(
-		FileManager* fileManager, 
 		const char* objfilePath,
 		const char* texturefile_path);
 

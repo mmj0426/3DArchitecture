@@ -2,11 +2,9 @@
 #include "FileManager.h"
 
 UserObject::UserObject(
-	FileManager* fileManager,
 	const char* objfilePath,
 	const char* texturefile_path)
 {
-	this->fileManager = fileManager;
 	this->objfilePath = objfilePath;
 	this->texturefile_path = texturefile_path;	
 
@@ -17,9 +15,9 @@ void UserObject::InitData()
 {
 	RenderableObject::InitData();
 
-	fileManager->LoadOBJ(objfilePath, vertices, uvs, normals);
+	FileManager::GetInstance()->LoadOBJ(objfilePath, vertices, uvs, normals);
 
-	texture = fileManager->LoadDDS(texturefile_path);
+	texture = FileManager::GetInstance()->LoadDDS(texturefile_path);
 
 	SetBuffer();
 

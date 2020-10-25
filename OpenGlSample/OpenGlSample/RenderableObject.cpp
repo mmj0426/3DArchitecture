@@ -10,7 +10,7 @@ void RenderableObject::InitData()
 {
 	textureID = glGetUniformLocation(programID, "myTextureSampler");
 
-	programID = fileManager->LoadShaders("vs_w7.shader", "fs_w7.shader");
+	programID = FileManager::GetInstance()->LoadShaders("vs_w7.shader", "fs_w7.shader");
 }
 
 void RenderableObject::SetBuffer()

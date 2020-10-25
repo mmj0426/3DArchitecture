@@ -1,8 +1,11 @@
-#pragma once
+#ifndef __RENDERER_H__
+#define __RENDERER_H__
+
 
 #include <vector>
 
 #include "RenderableObject.h"
+#include "Singleton.h"
 
 #include "include/GL/glew.h"		
 #include "include/GLFW/glfw3.h" 
@@ -12,11 +15,9 @@ class NonRenderableObject;
 class IRenderer;
 class IUpdater;
 
-class Renderer : public ICleanUp
+class Renderer : public ICleanUp, public Singleton<Renderer>
 {
-public : 
-	Renderer();
-	~Renderer() {}
+public:
 	void Initialize();
 	void draw();
 	void AddObject(IRenderer* render_obj);
@@ -28,6 +29,7 @@ public :
 	virtual void ShutDown() override;
 
 private : 
+
 	glm::mat4 ModelMatrix;
 	glm::mat4 ViewMatrix;
 	glm::mat4 ProjectionMatrix;
@@ -38,3 +40,4 @@ private :
 
 	std::vector<IRenderer*> objectArray;
 };
+#endif // !__RENDERER_H__

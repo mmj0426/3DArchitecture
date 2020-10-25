@@ -5,7 +5,6 @@
 #include "IRenderer.h"
 
 class Object;
-class FileManager;
 
 class RenderableObject : public Object, public IRenderer
 {
@@ -20,8 +19,6 @@ public:
 	virtual glm::mat4  GetTranslate() override { return Object::GetTranslate();  }
 
 	virtual void InitData() override;
-
-	FileManager* fileManager;
 
 	const char* objfilePath;
 	const char* texturefile_path;

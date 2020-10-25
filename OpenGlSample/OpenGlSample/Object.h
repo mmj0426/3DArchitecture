@@ -18,7 +18,10 @@ public :
 	virtual void ShutDown() override;
 
 	glm::mat4 GetTranslate() const { return translate; }
+
 	void SetPosition(glm::vec3 src_position);
+	
+	glm::vec3  currentTranslate;
 	
 
 private:

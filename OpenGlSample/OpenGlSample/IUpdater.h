@@ -1,9 +1,9 @@
 #ifndef __IUPDATER_H__
-#define __IUPDATER_H
+#define __IUPDATER_H__
 
 class IUpdater
 {
-public : 
+public: 
 	virtual void Update() = 0;
 };
 

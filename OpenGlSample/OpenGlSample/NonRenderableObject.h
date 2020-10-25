@@ -1,4 +1,6 @@
-#pragma once
+#ifndef __NONRENDERABLEOBJECT_H__
+#define __NONRENDERABLEOBJECT_H__
+
 #include "Object.h"
 #include "IUpdater.h"
 
@@ -10,3 +12,4 @@ public :
 	virtual void Update() override;
 };
 
+#endif // !__NONRENDERABLEOBJECT_H__
