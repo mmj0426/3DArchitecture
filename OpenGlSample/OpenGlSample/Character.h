@@ -17,8 +17,6 @@ public :
 
 	virtual void Update() override;
 
-	void Movement();
-
 private : 
 	float currentPosX;
 	float currentPosZ;

@@ -54,10 +54,10 @@ void main() {
 
 
 	//자체적으로 뿜는 빛
-	//vec3 ambient_color = vec3(0.1, 0, 0);
+	vec3 ambient_color = vec3(0.1, 0.1, 0.1);
 
-	//color =
-	//	MaterialDiffuseColor * LightColor * LightPower * cosTheta / (distance * distance) +  //거리기반 빛 적용
-	//	MaterialDiffuseColor * 0.1f + //주변광 강도
-	//	ambient_color; // 주변광 색상
+	color =
+		MaterialDiffuseColor * LightColor * LightPower * cosTheta / (distance * distance) +  //거리기반 빛 적용
+		MaterialDiffuseColor * 0.1f + //주변광 강도
+		ambient_color; // 주변광 색상
 }

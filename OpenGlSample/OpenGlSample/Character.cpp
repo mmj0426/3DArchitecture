@@ -47,22 +47,6 @@ void Character::Update()
 	{
 		currentPosX += speed;
 	}
-	if (InputManager::GetInstance()->GetKey(GLFW_KEY_W) == GLFW_PRESS)
-	{
-		currentPosZ -= speed;
-	}
-	if (InputManager::GetInstance()->GetKey(GLFW_KEY_S) == GLFW_PRESS)
-	{
-		currentPosZ += speed;
-	}
 
-	SetPosition(glm::vec3(currentPosX, 0.0f, currentPosZ));
+	SetPosition(glm::vec3(currentPosX, currentTranslate.y, currentPosZ));
 }
-
-void Character::Movement()
-{
-	
-}
-
-//InputManager는 window 가지고있어
-//Input(GLFW KEY) 함수를 가지고있어

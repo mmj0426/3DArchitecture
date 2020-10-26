@@ -115,6 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Apple.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="FileManager.h" />
     <ClInclude Include="glm\common.hpp" />
@@ -522,6 +523,7 @@
     <None Include="vs_w7.shader" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Apple.cpp" />
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="FileManager.cpp" />
     <ClCompile Include="InputManager.cpp" />

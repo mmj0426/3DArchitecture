@@ -10,6 +10,7 @@
 #include "SampleNonRender.h"
 #include "Character.h"
 #include"InputManager.h"
+#include "Apple.h"
 
 
 int main()
@@ -20,27 +21,35 @@ int main()
 	renderer->Initialize();
 
 	//ground
-	UserObject* ground = new UserObject("ground.obj", "container.dds");
+	UserObject* ground = new UserObject("ground.obj", "road.dds");
 
-	ground->SetPosition(glm::vec3(5.0f, -2.0f, 0.0f));
+	ground->SetPosition(glm::vec3(1.5f, -2.0f, -8.0f));
+	ground->SetScale(glm::vec3(2.0f, 2.0f, 10.0f));
 	renderer->AddObject(ground);
-	
-	//Sphere
-	Sphere* sphere = new  Sphere();
 
-	sphere->SetPosition(glm::vec3(0.0f, 0.0f, 0.0f));
-	renderer->AddObject(sphere);
+	//Apple
+	Apple* apple_1 = new Apple("apple.obj", "apple.dds");
+	apple_1->SetPosition(glm::vec3(1.5f, -2.0f, -20.0f));
+	renderer->AddObject(apple_1);
+
+	Apple* apple_2 = new Apple("apple.obj", "apple.dds");
+	apple_2->SetPosition(glm::vec3(0.0f, -2.0f, -20.0f));
+	renderer->AddObject(apple_2);
+
+	Apple* apple_3 = new Apple("apple.obj", "apple.dds");
+	apple_3->SetPosition(glm::vec3(6.0f, -2.0f, -20.0f));
+	renderer->AddObject(apple_3);
 
 	//NonRenderableObject
 	SampleNonRender* non_render_obj = new SampleNonRender();
 
 	//Character
-	Character* character = new Character("Hamm.obj","Hamm.dds");
+	Character* hamm = new Character("Hamm.obj","Hamm.dds");
 
-	character->SetPosition(glm::vec3(5.0f, 0.0f, 0.0f));
-	character->SetRotation(180.0f, glm::vec3(0.0f, 1.0f, 0.0f));
-	character->SetScale(glm::vec3(0.01f, 0.01f, 0.01f));
-	renderer->AddObject(character);
+	hamm->SetPosition(glm::vec3(10.0f, -1.0f, 5.0f));
+	hamm->SetRotation(180.0f, glm::vec3(0.0f, 1.0f, 0.0f));
+	hamm->SetScale(glm::vec3(0.01f, 0.01f, 0.01f));
+	renderer->AddObject(hamm);
 
 	//Camera
 	renderer->SetViewMatrix(glm::lookAt(
@@ -51,15 +60,21 @@ int main()
 
 	do
 	{
-		renderer->Update(character);
 		renderer->draw();
+		renderer->Update(apple_1);
+		renderer->Update(apple_2);
+		renderer->Update(apple_3);
+		renderer->Update(hamm);
 
 	} while (InputManager::GetInstance()->GetKey(GLFW_KEY_ESCAPE) != GLFW_PRESS && glfwWindowShouldClose(renderer->GetWindow()) == 0);
 
 	glfwTerminate();
 
-	//delete ground;
-	//delete sphere;
+	delete ground;
+	delete apple_1;
+	delete apple_2;
+	delete apple_3;
+	delete hamm;
 
 	return 0;
 
