@@ -6,6 +6,15 @@
 
 void Renderer::Initialize()
 {
+	//프레임 측정 관련 셋업
+	targetFrame = 60;
+
+	QueryPerformanceFrequency(&frameInfo);
+	QueryPerformanceCounter(&prevFrameCounter);
+
+	perFrame = frameInfo.QuadPart / (double)targetFrame;
+	std::cout << "Target Frame : " << targetFrame << std::endl;
+
 	ModelMatrix = glm::mat4(1.0);
 
 	ViewMatrix = glm::lookAt(
@@ -156,4 +165,28 @@ void Renderer::AddObject(IRenderer* render_obj)
 void Renderer::Update(IUpdater* src_obj)
 {
 	src_obj->Update();
+}
+
+bool Renderer::isRenderTiming()
+{
+	QueryPerformanceCounter(&currentFrameCounter);
+
+	double time_distance = currentFrameCounter.QuadPart - prevFrameCounter.QuadPart;
+
+	if (time_distance > perFrame)
+	{
+		prevFrameCounter = currentFrameCounter;
+		static int count = 0;
+		if (count++ > targetFrame)
+		{
+			std::cout << "1 second" << std::endl;
+
+			count = 0;
+		}
+
+		// targetFrame 확인
+		//std::cout << "dis : " << time_distance << " Frame : " << frameInfo.QuadPart / time_distance << std::endl;
+		return true;
+	}
+	return false;
 }

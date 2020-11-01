@@ -3,6 +3,7 @@
 
 
 #include <vector>
+#include <Windows.h>
 
 #include "RenderableObject.h"
 #include "Singleton.h"
@@ -28,8 +29,10 @@ public:
 
 	virtual void ShutDown() override;
 
+	bool isRenderTiming();
+
 	glm::mat4 ModelMatrix;
-private : 
+private :
 
 	glm::mat4 ViewMatrix;
 	glm::mat4 ProjectionMatrix;
@@ -39,5 +42,11 @@ private :
 	GLFWwindow* window;
 
 	std::vector<IRenderer*> objectArray;
+	
+	LARGE_INTEGER currentFrameCounter;
+	LARGE_INTEGER prevFrameCounter;
+	LARGE_INTEGER frameInfo;
+	double targetFrame;
+	double perFrame;
 };
 #endif // !__RENDERER_H__

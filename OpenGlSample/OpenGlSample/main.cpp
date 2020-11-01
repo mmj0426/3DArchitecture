@@ -61,10 +61,13 @@ int main()
 	do
 	{
 		renderer->draw();
-		renderer->Update(apple_1);
-		renderer->Update(apple_2);
-		renderer->Update(apple_3);
-		renderer->Update(hamm);
+		if (renderer->isRenderTiming())
+		{
+			renderer->Update(apple_1);
+			renderer->Update(apple_2);
+			renderer->Update(apple_3);
+			renderer->Update(hamm);
+		}
 
 	} while (InputManager::GetInstance()->GetKey(GLFW_KEY_ESCAPE) != GLFW_PRESS && glfwWindowShouldClose(renderer->GetWindow()) == 0);
 
