@@ -4,7 +4,7 @@
 #include "RenderableObject.h"
 #include "IUpdater.h"
 
-class Character : public RenderableObject, public IUpdater
+class Character : public RenderableObject
 {
 public : 
 	Character(

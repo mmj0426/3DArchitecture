@@ -1,9 +1,10 @@
 #include "RenderableObject.h"
 #include "FileManager.h"
+#include "ObjectUpdater.h"
 
 RenderableObject::RenderableObject()
 {
-	
+	ObjectUpdater::GetInstance()->AddObject(this);
 }
 
 void RenderableObject::InitData()

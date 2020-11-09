@@ -374,12 +374,14 @@
     <ClInclude Include="IUpdater.h" />
     <ClInclude Include="NonRenderableObject.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="ObjectUpdater.h" />
     <ClInclude Include="RenderableObject" />
     <ClInclude Include="RenderableObject.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="SampleNonRender.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="Sphere.h" />
+    <ClInclude Include="Template.h" />
     <ClInclude Include="UserObject.h" />
   </ItemGroup>
   <ItemGroup>
@@ -530,10 +532,12 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NonRenderableObject.cpp" />
     <ClCompile Include="Object.cpp" />
+    <ClCompile Include="ObjectUpdater.cpp" />
     <ClCompile Include="RenderableObject.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="SampleNonRender.cpp" />
     <ClCompile Include="Sphere.cpp" />
+    <ClCompile Include="Template.cpp" />
     <ClCompile Include="UserObject.cpp" />
   </ItemGroup>
   <ItemGroup>

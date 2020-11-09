@@ -3,8 +3,9 @@
 
 #include "Object.h"
 #include "IRenderer.h"
+#include "IUpdater.h"
 
-class RenderableObject : public Object, public IRenderer
+class RenderableObject : public Object, public IRenderer, public IUpdater
 {
 public:
 	RenderableObject();

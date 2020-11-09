@@ -17,6 +17,8 @@ public :
 
 	virtual void InitData() override;
 
+	virtual void Update() override;
+
 };
 
 

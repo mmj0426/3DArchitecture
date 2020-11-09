@@ -28,3 +28,8 @@ void UserObject::ShutDown()
 	RenderableObject::ShutDown();
 
 }
+
+void UserObject::Update()
+{
+
+}

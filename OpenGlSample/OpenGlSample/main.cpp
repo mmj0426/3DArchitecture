@@ -11,6 +11,7 @@
 #include "Character.h"
 #include"InputManager.h"
 #include "Apple.h"
+#include "ObjectUpdater.h"
 
 
 int main()
@@ -19,6 +20,8 @@ int main()
 
 	Renderer* renderer = Renderer::GetInstance();
 	renderer->Initialize();
+
+	ObjectUpdater* updater = ObjectUpdater::GetInstance();
 
 	//ground
 	UserObject* ground = new UserObject("ground.obj", "road.dds");
@@ -58,18 +61,28 @@ int main()
 		glm::vec3(0, 1, 0)  // Head is up (set to 0,-1,0 to look upside-down)
 	));
 
+
 	do
 	{
-		renderer->draw();
+		//가변 프레임
 		if (renderer->isRenderTiming())
 		{
-			renderer->Update(apple_1);
-			renderer->Update(apple_2);
-			renderer->Update(apple_3);
-			renderer->Update(hamm);
+			renderer->draw();
+		}
+
+		//고정 프레임
+		if (updater->isUpdateTiming())
+		{
+			updater->Update();
 		}
 
 	} while (InputManager::GetInstance()->GetKey(GLFW_KEY_ESCAPE) != GLFW_PRESS && glfwWindowShouldClose(renderer->GetWindow()) == 0);
+
+	ground->ShutDown();
+	hamm->ShutDown();
+	apple_1->ShutDown();
+	apple_2->ShutDown();
+	apple_3->ShutDown();
 
 	glfwTerminate();
 

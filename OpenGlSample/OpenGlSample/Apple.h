@@ -4,7 +4,7 @@
 #include "RenderableObject.h"
 #include "IUpdater.h"
 
-class Apple : public RenderableObject, public IUpdater
+class Apple : public RenderableObject
 {
 public : 
 	Apple(
