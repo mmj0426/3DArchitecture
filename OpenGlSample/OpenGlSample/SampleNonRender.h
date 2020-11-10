@@ -6,9 +6,14 @@
 class SampleNonRender : public NonRenderableObject
 {
 public : 
-	virtual void ShutDown() override {}
+	SampleNonRender();
+	~SampleNonRender();
 
-	virtual void Update() override {}
+	virtual void Init() override;
+
+	virtual void ShutDown() override;
+
+	virtual void Update() override;
 };
 
 #endif // !__SAMPLENONRENDER_H__

@@ -7,15 +7,13 @@
 class Character : public RenderableObject
 {
 public : 
-	Character(
-		const char* objfilePath,
-		const char* texturefile_path);
+	Character();
 	~Character(){}
 
-	virtual void ShutDown() override;
-	virtual void InitData() override;
-
+	virtual void Init() override;
+	virtual void Render() override;
 	virtual void Update() override;
+	virtual void ShutDown() override;
 
 private : 
 	float currentPosX;

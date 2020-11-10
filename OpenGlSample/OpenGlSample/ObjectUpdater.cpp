@@ -16,12 +16,12 @@ ObjectUpdater::ObjectUpdater()
 
 void ObjectUpdater::AddObject(IUpdater* src_obj)
 {
-	updaterObjectList.push_back(src_obj);
+	updaterObjectArray.push_back(src_obj);
 }
 
 void ObjectUpdater::Update()
 {
-	for (std::vector<IUpdater*>::iterator begin = updaterObjectList.begin(); begin != updaterObjectList.end(); begin++)
+	for (std::vector<IUpdater*>::iterator begin = updaterObjectArray.begin(); begin != updaterObjectArray.end(); begin++)
 	{
 		(*begin)->Update();
 	}
@@ -45,7 +45,7 @@ bool ObjectUpdater::isUpdateTiming()
 		}
 
 		//targetFrame »Æ¿Œ
-		std::cout << "dis : " << time_distance << " Frame : " << frameInfo.QuadPart / time_distance << std::endl;
+		/*std::cout << "dis : " << time_distance << " Frame : " << frameInfo.QuadPart / time_distance << std::endl;*/
 		return true;
 	}
 	return false;

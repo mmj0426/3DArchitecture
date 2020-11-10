@@ -4,12 +4,12 @@
 
 Sphere::Sphere()
 {
-	InitData();
+	Init();
 }
 
-void Sphere::InitData()
+void Sphere::Init()
 {
-	RenderableObject::InitData();
+	RenderableObject::Init();
 
 	FileManager::GetInstance()->LoadOBJ("sphere.obj", vertices, uvs, normals);
 

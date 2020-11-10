@@ -20,7 +20,7 @@ class Renderer : public ICleanUp, public Singleton<Renderer>
 {
 public:
 	void Initialize();
-	void draw();
+	void Draw();
 	void AddObject(IRenderer* render_obj);
 	void Update(IUpdater* src_obj);
 
@@ -30,9 +30,9 @@ public:
 	virtual void ShutDown() override;
 
 	bool isRenderTiming();
-	bool isUpdateTiming();
 
 	glm::mat4 ModelMatrix;
+
 private :
 
 	glm::mat4 ViewMatrix;

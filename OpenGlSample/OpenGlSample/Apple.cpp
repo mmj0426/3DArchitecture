@@ -4,15 +4,19 @@
 #include <iostream>
 #include <random>
 
-Apple::Apple(
-	const char* objfilePath,
-	const char* texturefile_path)
+Apple::Apple()
 {
-	this->objfilePath = objfilePath;
-	this->texturefile_path = texturefile_path;
+	Init();
+}
 
-	InitData();
-	
+void Apple::Init()
+{
+	std::cout << "Init" << std::endl;
+
+	SetPosition(glm::vec3(1.5f, -2.0f, -20.0f));
+
+	RenderableObject::Init();
+
 	std::random_device rng;
 
 	std::uniform_int_distribution<int> dist(3, 10);
@@ -28,25 +32,6 @@ Apple::Apple(
 	currentTranslate.x = dist_x(rng);
 	currentTranslate.x = currentTranslate.x / 10;
 	SetPosition(glm::vec3(currentTranslate.x, currentTranslate.y, currentTranslate.z));
-
-	//speed = 0.1f;
-}
-
-void Apple::InitData()
-{
-	RenderableObject::InitData();
-
-	FileManager::GetInstance()->LoadOBJ(objfilePath, vertices, uvs, normals);
-
-	texture = FileManager::GetInstance()->LoadDDS(texturefile_path);
-
-	SetBuffer();
-
-}
-
-void Apple::ShutDown()
-{
-	RenderableObject::ShutDown();
 }
 
 void Apple::Update()
@@ -59,6 +44,25 @@ void Apple::Update()
 
 	if (currentTranslate.z >= 5.0f)
 	{
-		//∞¥√º ªË¡¶
+		//delete this;
 	}
+}
+
+void Apple::Render()
+{
+	std::cout << "Render" << std::endl;
+
+	objfilePath = "apple.obj";
+	texturefile_path = "apple.dds";
+
+	FileManager::GetInstance()->LoadOBJ(objfilePath, vertices, uvs, normals);
+
+	texture = FileManager::GetInstance()->LoadDDS(texturefile_path);
+
+	SetBuffer();
+}
+
+void Apple::ShutDown()
+{
+	RenderableObject::ShutDown();
 }

@@ -13,13 +13,14 @@ public:
 
 	void SetBuffer();
 
-	virtual void ShutDown() override;
-
 	virtual glm::mat4  GetTranslate() override { return Object::GetTranslate();  }
 	virtual glm::mat4 GetRotate() override { return Object::GetRotate(); }
 	virtual glm::mat4 GetScale() override { return Object::GetScale(); }
 
-	virtual void InitData() override;
+	virtual void Init() override;
+	virtual void ShutDown() override;
+
+	void SetRenderData();
 
 	const char* objfilePath;
 	const char* texturefile_path;

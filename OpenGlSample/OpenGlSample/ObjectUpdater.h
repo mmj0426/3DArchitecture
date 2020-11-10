@@ -19,7 +19,7 @@ public :
 	void Update();
 
 private : 
-	std::vector<IUpdater*> updaterObjectList;
+	std::vector<IUpdater*> updaterObjectArray;
 
 	LARGE_INTEGER currentFrameCounter;
 	LARGE_INTEGER prevFrameCounter;

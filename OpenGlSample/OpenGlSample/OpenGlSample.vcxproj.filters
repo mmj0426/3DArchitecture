@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\Interface">
+      <UniqueIdentifier>{44082342-26cc-4572-9ed3-e4f83b4f5a11}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="glm\detail\_features.hpp">
@@ -771,9 +774,6 @@
     <ClInclude Include="Renderer.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="ICleanUp.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="NonRenderableObject.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -786,25 +786,13 @@
     <ClInclude Include="Sphere.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="UserObject.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="RenderableObject.h">
       <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="IRenderer.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="IUpdater.h">
-      <Filter>소스 파일</Filter>
     </ClInclude>
     <ClInclude Include="SampleNonRender.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Character.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="InputManager.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Singleton.h">
@@ -813,11 +801,23 @@
     <ClInclude Include="Apple.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Template.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="ObjectUpdater.h">
       <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Ground.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="IRenderer.h">
+      <Filter>소스 파일\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="IUpdater.h">
+      <Filter>소스 파일\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="ICleanUp.h">
+      <Filter>소스 파일\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>소스 파일</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1250,9 +1250,6 @@
     <ClCompile Include="Sphere.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="UserObject.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="SampleNonRender.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -1265,10 +1262,10 @@
     <ClCompile Include="Apple.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Template.cpp">
+    <ClCompile Include="ObjectUpdater.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="ObjectUpdater.cpp">
+    <ClCompile Include="Ground.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

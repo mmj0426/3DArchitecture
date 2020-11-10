@@ -9,7 +9,7 @@ public :
 	Sphere();
 	~Sphere() {}
 	
-	virtual void InitData() override;
+	virtual void Init() override;
 
 	virtual void ShutDown() override;
 

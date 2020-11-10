@@ -4,7 +4,7 @@
 class IRenderer
 {
 public :
-	virtual void InitData() = 0;
+	virtual void Render() = 0;
 	virtual glm::mat4 GetTranslate() = 0;
 	virtual glm::mat4 GetRotate() = 0;
 	virtual glm::mat4 GetScale() = 0;

@@ -6,8 +6,6 @@
 
 void Renderer::Initialize()
 {
-
-
 	ModelMatrix = glm::mat4(1.0);
 
 	ViewMatrix = glm::lookAt(
@@ -74,7 +72,7 @@ void Renderer::Initialize()
 }
 
 
-void Renderer::draw()
+void Renderer::Draw()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	for (std::vector<IRenderer*>::iterator i = objectArray.begin(); i != objectArray.end(); i++)

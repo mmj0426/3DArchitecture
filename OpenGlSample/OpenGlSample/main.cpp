@@ -6,7 +6,7 @@
 #include "FileManager.h"
 #include "Renderer.h"
 #include "Sphere.h"
-#include "UserObject.h"
+#include "Ground.h"
 #include "SampleNonRender.h"
 #include "Character.h"
 #include"InputManager.h"
@@ -24,35 +24,17 @@ int main()
 	ObjectUpdater* updater = ObjectUpdater::GetInstance();
 
 	//ground
-	UserObject* ground = new UserObject("ground.obj", "road.dds");
-
-	ground->SetPosition(glm::vec3(1.5f, -2.0f, -8.0f));
-	ground->SetScale(glm::vec3(2.0f, 2.0f, 10.0f));
-	renderer->AddObject(ground);
+	Ground* ground = new Ground();
 
 	//Apple
-	Apple* apple_1 = new Apple("apple.obj", "apple.dds");
-	apple_1->SetPosition(glm::vec3(1.5f, -2.0f, -20.0f));
-	renderer->AddObject(apple_1);
-
-	Apple* apple_2 = new Apple("apple.obj", "apple.dds");
-	apple_2->SetPosition(glm::vec3(0.0f, -2.0f, -20.0f));
-	renderer->AddObject(apple_2);
-
-	Apple* apple_3 = new Apple("apple.obj", "apple.dds");
-	apple_3->SetPosition(glm::vec3(6.0f, -2.0f, -20.0f));
-	renderer->AddObject(apple_3);
+	Apple* apple_1 = new Apple();
 
 	//NonRenderableObject
 	SampleNonRender* non_render_obj = new SampleNonRender();
 
 	//Character
-	Character* hamm = new Character("Hamm.obj","Hamm.dds");
+	Character* hamm = new Character();
 
-	hamm->SetPosition(glm::vec3(10.0f, -1.0f, 5.0f));
-	hamm->SetRotation(180.0f, glm::vec3(0.0f, 1.0f, 0.0f));
-	hamm->SetScale(glm::vec3(0.01f, 0.01f, 0.01f));
-	renderer->AddObject(hamm);
 
 	//Camera
 	renderer->SetViewMatrix(glm::lookAt(
@@ -67,7 +49,7 @@ int main()
 		//가변 프레임
 		if (renderer->isRenderTiming())
 		{
-			renderer->draw();
+			renderer->Draw();
 		}
 
 		//고정 프레임
@@ -81,16 +63,9 @@ int main()
 	ground->ShutDown();
 	hamm->ShutDown();
 	apple_1->ShutDown();
-	apple_2->ShutDown();
-	apple_3->ShutDown();
+	non_render_obj->ShutDown();
 
 	glfwTerminate();
-
-	delete ground;
-	delete apple_1;
-	delete apple_2;
-	delete apple_3;
-	delete hamm;
 
 	return 0;
 

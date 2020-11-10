@@ -1,17 +1,19 @@
 #include "RenderableObject.h"
 #include "FileManager.h"
 #include "ObjectUpdater.h"
+#include "Renderer.h"
 
 RenderableObject::RenderableObject()
 {
+	Renderer::GetInstance()->AddObject(this);
 	ObjectUpdater::GetInstance()->AddObject(this);
 }
 
-void RenderableObject::InitData()
+void RenderableObject::Init()
 {
 	textureID = glGetUniformLocation(programID, "myTextureSampler");
-
 	programID = FileManager::GetInstance()->LoadShaders("vs_w7.shader", "fs_w7.shader");
+	this->Render();
 }
 
 void RenderableObject::SetBuffer()
@@ -35,6 +37,8 @@ void RenderableObject::SetBuffer()
 
 void RenderableObject::ShutDown()
 {
+	Object::ShutDown();
+
 	glDeleteBuffers(1, &vertexbuffer);
 	glDeleteBuffers(1, &uvbuffer);
 	glDeleteBuffers(1, &normalbuffer);

@@ -7,15 +7,13 @@
 class Apple : public RenderableObject
 {
 public : 
-	Apple(
-		const char* objfilePath,
-		const char* texturefile_path);
+	Apple();
 	~Apple() {}
 
-	virtual void ShutDown()override;
-	virtual void InitData() override;
-
+	virtual void Init() override;
+	virtual void Render() override;
 	virtual void Update()override;
+	virtual void ShutDown()override;
 
 private : 
 	float currentPosZ;

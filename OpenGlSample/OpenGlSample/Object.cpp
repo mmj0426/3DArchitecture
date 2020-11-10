@@ -25,5 +25,5 @@ void Object::SetScale(glm::vec3 scale_range)
 
 void Object::ShutDown()
 {
-
+	
 }

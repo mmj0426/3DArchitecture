@@ -381,8 +381,7 @@
     <ClInclude Include="SampleNonRender.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="Sphere.h" />
-    <ClInclude Include="Template.h" />
-    <ClInclude Include="UserObject.h" />
+    <ClInclude Include="Ground.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="color_buffer_data.csv" />
@@ -537,8 +536,7 @@
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="SampleNonRender.cpp" />
     <ClCompile Include="Sphere.cpp" />
-    <ClCompile Include="Template.cpp" />
-    <ClCompile Include="UserObject.cpp" />
+    <ClCompile Include="Ground.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="uvtemplate.DDS" />

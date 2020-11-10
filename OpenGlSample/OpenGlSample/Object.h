@@ -15,7 +15,6 @@ public :
 	Object();
 	virtual ~Object() {}
 
-	virtual void ShutDown() override;
 
 	glm::mat4 GetTranslate() const { return translate; }
 	glm::mat4 GetRotate() const { return rotate; }
@@ -26,8 +25,10 @@ public :
 	void SetScale(glm::vec3 scale_range);
 	
 	glm::vec3  currentTranslate;
-	
 
+	virtual void Init() = 0;
+	virtual void ShutDown() override;
+	
 private:
 	glm::mat4 translate;
 	glm::mat4 rotate;
