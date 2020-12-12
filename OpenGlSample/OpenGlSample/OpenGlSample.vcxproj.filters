@@ -16,6 +16,18 @@
     <Filter Include="소스 파일\Interface">
       <UniqueIdentifier>{44082342-26cc-4572-9ed3-e4f83b4f5a11}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Object">
+      <UniqueIdentifier>{2b6760f5-bc4d-4f1b-bd33-64b20504c38a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Object\Renderable">
+      <UniqueIdentifier>{f014dc04-5049-43cb-9e8c-11a1c3b9203d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Object\NonRenderable">
+      <UniqueIdentifier>{92210ce0-fc41-41fd-952b-fe848e4e0ed8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager">
+      <UniqueIdentifier>{22feff07-d8ed-4002-b620-f07311482b46}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="glm\detail\_features.hpp">
@@ -768,43 +780,7 @@
     <ClInclude Include="include\GLFW\glfw3native.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="FileManager.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Renderer.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="NonRenderableObject.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="RenderableObject">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Object.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Sphere.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="RenderableObject.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="SampleNonRender.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Character.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Singleton.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Apple.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjectUpdater.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Ground.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="IRenderer.h">
@@ -816,8 +792,50 @@
     <ClInclude Include="ICleanUp.h">
       <Filter>소스 파일\Interface</Filter>
     </ClInclude>
+    <ClInclude Include="Apple.h">
+      <Filter>소스 파일\Object\Renderable</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>소스 파일\Object\Renderable</Filter>
+    </ClInclude>
+    <ClInclude Include="Ground.h">
+      <Filter>소스 파일\Object\Renderable</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderableObject.h">
+      <Filter>소스 파일\Object\Renderable</Filter>
+    </ClInclude>
+    <ClInclude Include="Sphere.h">
+      <Filter>소스 파일\Object\Renderable</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>소스 파일\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="NonRenderableObject.h">
+      <Filter>소스 파일\Object\NonRenderable</Filter>
+    </ClInclude>
+    <ClInclude Include="SampleNonRender.h">
+      <Filter>소스 파일\Object\NonRenderable</Filter>
+    </ClInclude>
     <ClInclude Include="InputManager.h">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="FileManager.h">
+      <Filter>소스 파일\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>소스 파일\Object\Renderable</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>소스 파일\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectUpdater.h">
+      <Filter>소스 파일\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentObject.h">
+      <Filter>소스 파일\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="CompositeObject.h">
+      <Filter>소스 파일\Object</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1229,44 +1247,50 @@
     <None Include="vertex_buffer_data.csv" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="FileManager.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Renderer.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="NonRenderableObject.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="RenderableObject.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Object.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Sphere.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="SampleNonRender.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="Apple.cpp">
+      <Filter>소스 파일\Object\Renderable</Filter>
     </ClCompile>
     <ClCompile Include="Character.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="InputManager.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Apple.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjectUpdater.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\Object\Renderable</Filter>
     </ClCompile>
     <ClCompile Include="Ground.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\Object\Renderable</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderableObject.cpp">
+      <Filter>소스 파일\Object\Renderable</Filter>
+    </ClCompile>
+    <ClCompile Include="Sphere.cpp">
+      <Filter>소스 파일\Object\Renderable</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>소스 파일\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="NonRenderableObject.cpp">
+      <Filter>소스 파일\Object\NonRenderable</Filter>
+    </ClCompile>
+    <ClCompile Include="SampleNonRender.cpp">
+      <Filter>소스 파일\Object\NonRenderable</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>소스 파일\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="FileManager.cpp">
+      <Filter>소스 파일\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>소스 파일\Object\Renderable</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectUpdater.cpp">
+      <Filter>소스 파일\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentObject.cpp">
+      <Filter>소스 파일\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="CompositeObject.cpp">
+      <Filter>소스 파일\Object</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

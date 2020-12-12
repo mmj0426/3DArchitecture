@@ -60,10 +60,10 @@ int main()
 
 	} while (InputManager::GetInstance()->GetKey(GLFW_KEY_ESCAPE) != GLFW_PRESS && glfwWindowShouldClose(renderer->GetWindow()) == 0);
 
-	ground->ShutDown();
-	hamm->ShutDown();
-	apple_1->ShutDown();
-	non_render_obj->ShutDown();
+	//ground->ShutDown();
+	//hamm->ShutDown();
+	//apple_1->ShutDown();
+	//non_render_obj->ShutDown();
 
 	glfwTerminate();
 

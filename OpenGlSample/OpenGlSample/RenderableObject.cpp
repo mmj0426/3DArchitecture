@@ -37,7 +37,7 @@ void RenderableObject::SetBuffer()
 
 void RenderableObject::ShutDown()
 {
-	Object::ShutDown();
+	//CompositeObject::ShutDown();
 
 	glDeleteBuffers(1, &vertexbuffer);
 	glDeleteBuffers(1, &uvbuffer);

@@ -1,10 +1,10 @@
 #ifndef __NONRENDERABLEOBJECT_H__
 #define __NONRENDERABLEOBJECT_H__
 
-#include "Object.h"
+#include "CompositeObject.h"
 #include "ObjectUpdater.h"
 
-class NonRenderableObject : public Object, public IUpdater
+class NonRenderableObject : public CompositeObject, public IUpdater
 {
 public : 
 	NonRenderableObject();

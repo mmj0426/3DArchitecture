@@ -117,6 +117,8 @@
   <ItemGroup>
     <ClInclude Include="Apple.h" />
     <ClInclude Include="Character.h" />
+    <ClInclude Include="ComponentObject.h" />
+    <ClInclude Include="CompositeObject.h" />
     <ClInclude Include="FileManager.h" />
     <ClInclude Include="glm\common.hpp" />
     <ClInclude Include="glm\detail\compute_common.hpp" />
@@ -526,6 +528,8 @@
   <ItemGroup>
     <ClCompile Include="Apple.cpp" />
     <ClCompile Include="Character.cpp" />
+    <ClCompile Include="ComponentObject.cpp" />
+    <ClCompile Include="CompositeObject.cpp" />
     <ClCompile Include="FileManager.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="main.cpp" />

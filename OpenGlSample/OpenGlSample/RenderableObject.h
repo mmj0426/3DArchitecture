@@ -1,11 +1,11 @@
 #ifndef __RENDERABLEOBJECT_H__
 #define __RENDERABLEOBJECT_H__
 
-#include "Object.h"
+#include "CompositeObject.h"
 #include "IRenderer.h"
 #include "IUpdater.h"
 
-class RenderableObject : public Object, public IRenderer, public IUpdater
+class RenderableObject : public CompositeObject , public IRenderer, public IUpdater
 {
 public:
 	RenderableObject();
@@ -19,8 +19,6 @@ public:
 
 	virtual void Init() override;
 	virtual void ShutDown() override;
-
-	void SetRenderData();
 
 	const char* objfilePath;
 	const char* texturefile_path;

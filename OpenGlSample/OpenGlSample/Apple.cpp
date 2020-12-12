@@ -23,7 +23,7 @@ void Apple::Init()
 
 	speed = dist(rng);
 
-	speed = speed / 100;
+	speed = speed / 50;
 
 	std::cout << speed << std::endl;
 

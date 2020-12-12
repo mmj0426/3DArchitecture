@@ -18,7 +18,7 @@ void NonRenderableObject::Init()
 
 void NonRenderableObject::ShutDown()
 {
-
+	CompositeObject::ShutDown();
 }
 
 void NonRenderableObject::Update()
