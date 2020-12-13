@@ -28,6 +28,10 @@ int main()
 
 	//Apple
 	Apple* apple_1 = new Apple();
+	Apple* apple_2 = new Apple();
+	Apple* apple_3 = new Apple();
+	Apple* apple_4 = new Apple();
+	Apple* apple_5 = new Apple();
 
 	//NonRenderableObject
 	SampleNonRender* non_render_obj = new SampleNonRender();
@@ -60,10 +64,10 @@ int main()
 
 	} while (InputManager::GetInstance()->GetKey(GLFW_KEY_ESCAPE) != GLFW_PRESS && glfwWindowShouldClose(renderer->GetWindow()) == 0);
 
-	//ground->ShutDown();
-	//hamm->ShutDown();
-	//apple_1->ShutDown();
-	//non_render_obj->ShutDown();
+	ground->ShutDown();
+	hamm->ShutDown();
+	apple_1->ShutDown();
+	non_render_obj->ShutDown();
 
 	glfwTerminate();
 

@@ -13,7 +13,7 @@ void Apple::Init()
 {
 	std::cout << "Init" << std::endl;
 
-	SetPosition(glm::vec3(1.5f, -2.0f, -20.0f));
+	SetPosition(glm::vec3(2.0f, -2.0f, -20.0f));
 
 	RenderableObject::Init();
 
@@ -27,7 +27,7 @@ void Apple::Init()
 
 	std::cout << speed << std::endl;
 
-	std::uniform_int_distribution<int> dist_x(0, 60);
+	std::uniform_int_distribution<int> dist_x(10, 100);
 
 	currentTranslate.x = dist_x(rng);
 	currentTranslate.x = currentTranslate.x / 10;
@@ -44,7 +44,23 @@ void Apple::Update()
 
 	if (currentTranslate.z >= 5.0f)
 	{
-		//delete this;
+		SetPosition(glm::vec3(1.5f, -2.0f, -20.0f));
+
+		std::random_device rng;
+
+		std::uniform_int_distribution<int> dist(3, 10);
+
+		speed = dist(rng);
+
+		speed = speed / 50;
+
+		std::cout << speed << std::endl;
+
+		std::uniform_int_distribution<int> dist_x(10, 60);
+
+		currentTranslate.x = dist_x(rng);
+		currentTranslate.x = currentTranslate.x / 10;
+		SetPosition(glm::vec3(currentTranslate.x, currentTranslate.y, currentTranslate.z));
 	}
 }
 
